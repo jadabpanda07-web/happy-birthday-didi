@@ -1,0 +1,600 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   HIDE SECTIONS
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9a9e,
+            #fad0c4
+        );
+
+    color: white;
+}
+
+.welcome-content {
+    max-width: 700px;
+}
+
+.heart {
+    font-size: 80px;
+
+    animation:
+        heartbeat 1.2s infinite;
+}
+
+.welcome h1 {
+    font-size: 60px;
+
+    margin: 20px 0;
+}
+
+.welcome p {
+    font-size: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #ff4f81;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday {
+    background:
+        linear-gradient(
+            135deg,
+            #fbc2eb,
+            #a6c1ee
+        );
+
+    color: white;
+}
+
+.birthday h1 {
+    font-size: 55px;
+
+    margin: 20px 0;
+}
+
+.birthday h2 {
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+.small-title {
+    font-size: 20px;
+}
+
+
+/* =========================
+   SISTER PHOTO
+========================= */
+
+.photo-container {
+    width: 250px;
+    height: 250px;
+
+    margin: 20px auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.2);
+
+    animation: floating 3s infinite;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.birthday-text {
+    font-size: 19px;
+
+    max-width: 600px;
+
+    margin: 25px auto 35px;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories {
+    background:
+        linear-gradient(
+            135deg,
+            #fff1eb,
+            #ace0f9
+        );
+
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+
+    width: 100%;
+}
+
+.container h1 {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   MEMORY GRID
+========================= */
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   MEMORY CARD
+========================= */
+
+.memory-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.12);
+
+    transition: 0.4s;
+}
+
+.memory-card:hover {
+    transform:
+        translateY(-10px)
+        scale(1.02);
+}
+
+.memory-card img {
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.memory-card:hover img {
+    transform: scale(1.08);
+}
+
+.memory-info {
+    padding: 20px;
+}
+
+.memory-info h3 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+
+    max-width: 600px;
+
+    width: 100%;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    position: relative;
+
+    animation: popup 0.4s;
+}
+
+.modal-content img {
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    line-height: 1.7;
+}
+
+.close {
+    position: absolute;
+
+    right: 20px;
+    top: 10px;
+
+    font-size: 35px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    background:
+        linear-gradient(
+            135deg,
+            #ffecd2,
+            #fcb69f
+        );
+}
+
+.letter-container {
+    max-width: 750px;
+
+    width: 100%;
+}
+
+.letter-container h1 {
+    margin-bottom: 30px;
+
+    font-size: 45px;
+}
+
+.letter-paper {
+    background: #fffdf7;
+
+    padding: 45px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.15);
+
+    min-height: 350px;
+
+    margin-bottom: 30px;
+
+    text-align: left;
+}
+
+#typingText {
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    white-space: pre-line;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+    background:
+        linear-gradient(
+            135deg,
+            #a18cd1,
+            #fbc2eb
+        );
+
+    color: white;
+}
+
+.gift-container h1 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.gift-container p {
+    font-size: 20px;
+
+    margin-bottom: 30px;
+}
+
+.gift-box {
+    font-size: 150px;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    display: inline-block;
+
+    animation:
+        giftFloat 2s infinite;
+}
+
+.gift-box:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.gift-message {
+    display: none;
+
+    max-width: 650px;
+
+    margin: 40px auto 0;
+
+    background:
+        rgba(255, 255, 255, 0.2);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+}
+
+.gift-message h2 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.gift-message h1 {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.7);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes giftFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome h1 {
+        font-size: 42px;
+    }
+
+    .birthday h1 {
+        font-size: 38px;
+    }
+
+    .container h1 {
+        font-size: 35px;
+    }
+
+    .letter-container h1 {
+        font-size: 35px;
+    }
+
+    .letter-paper {
+        padding: 25px;
+    }
+
+    #typingText {
+        font-size: 17px;
+    }
+
+    .gift-container h1 {
+        font-size: 30px;
+    }
+
+}

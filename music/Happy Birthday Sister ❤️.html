@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Sister ❤️</title>
+
+    <link rel="stylesheet" href="./Happy Birthday Sister ❤️_files/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         WELCOME SECTION
+    ========================== -->
+
+    <section id="welcome" class="section welcome hidden">
+
+        <div class="welcome-content">
+
+            <div class="heart">❤️</div>
+
+            <h1>Hii Didi!</h1>
+
+            <p>
+                I made something special just for you...
+            </p>
+
+            <button onclick="startWebsite()">
+                ✨ Open Your Surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY SECTION
+    ========================== -->
+
+    <section id="birthday" class="section birthday hidden">
+
+        <div class="birthday-content">
+
+            <p class="small-title">
+                Today is a very special day...
+            </p>
+
+            <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+
+            <h2>My Cute Didi ❤️</h2>
+
+            <div class="photo-container">
+
+                <img src="./Happy Birthday Sister ❤️_files/sister.jpg" alt="Didi">
+
+            </div>
+
+            <p class="birthday-text">
+                Wishing you endless happiness, beautiful moments
+                and everything you deserve. ❤️
+            </p>
+
+            <button onclick="showMemories()">
+                📸 See Our Memories
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES SECTION
+    ========================== -->
+
+    <section id="memories" class="section memories hidden">
+
+        <div class="container">
+
+            <h1>📸 Our Beautiful Memories</h1>
+
+            <p class="section-subtitle">
+                Some moments that I will always remember ❤️
+            </p>
+
+
+            <div class="memory-grid">
+
+
+                <!-- MEMORY 1 -->
+
+                <div class="memory-card" onclick="openMemory(
+                     &#39;Childhood Memories ❤️&#39;,
+                     &#39;Those childhood days were simple, crazy and unforgettable. I am really lucky that I got to grow up with you.&#39;,
+                     &#39;images/memory1.jpg&#39;
+                     )">
+
+                    <img src="./Happy Birthday Sister ❤️_files/memory1.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Childhood Memories</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 2 -->
+
+                <div class="memory-card" onclick="openMemory(
+                     &#39;Our Fun Day 😄&#39;,
+                     &#39;This was one of those days when we laughed so much that we forgot everything else.&#39;,
+                     &#39;images/memory2.jpg&#39;
+                     )">
+
+                    <img src="./Happy Birthday Sister ❤️_files/memory2.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Our Fun Day</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 3 -->
+
+                <div class="memory-card" onclick="openMemory(
+                     &#39;Beautiful Moment 🌸&#39;,
+                     &#39;Some moments become special simply because we spent them together.&#39;,
+                     &#39;images/memory3.jpg&#39;
+                     )">
+
+                    <img src="./Happy Birthday Sister ❤️_files/memory3.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Beautiful Moment</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 4 -->
+
+                <div class="memory-card" onclick="openMemory(
+                     &#39;Family Time 👨‍👩‍👧&#39;,
+                     &#39;Family moments are some of the most precious memories we can have.&#39;,
+                     &#39;images/memory4.jpg&#39;
+                     )">
+
+                    <img src="./Happy Birthday Sister ❤️_files/memory4.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Family Time</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 5 -->
+
+                <div class="memory-card" onclick="openMemory(
+                     &#39;A Special Memory 💕&#39;,
+                     &#39;No matter how much time passes, memories like this will always make me smile.&#39;,
+                     &#39;images/memory5.jpg&#39;
+                     )">
+
+                    <img src="./Happy Birthday Sister ❤️_files/memory5.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>A Special Memory</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button onclick="showLetter()">
+                💌 Read My Letter
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORY POPUP
+    ========================== -->
+
+    <div id="memoryModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeMemory()">
+                ×
+            </span>
+
+            <img id="modalImage">
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalText"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LETTER SECTION
+    ========================== -->
+
+    <section id="letter" class="section letter hidden">
+
+        <div class="letter-container">
+
+            <h1>💌 A Letter For You</h1>
+
+            <div class="letter-paper">
+
+                <p id="typingText">Dear Sister ❤️
+
+Today is your special day, and I just want you to know how lucky I feel to have you in my life.
+
+We have shared so many memories together — our childhood, our silly fights, our laughter, our family moments and all those little things that made us smile.
+
+You may not always realize it, but you are a very important part of my life.
+
+I hope this birthday brings you lots of happiness, success, love and beautiful memories.
+
+Keep smiling, keep shining and always be the amazing person you are.
+
+Happy Birthday, Sister! 🎂❤️
+
+With lots of love,
+Your Brother ❤️</p>
+
+            </div>
+
+            <button onclick="showGift()">
+                🎁 One Last Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GIFT SECTION
+    ========================== -->
+
+    <section id="gift" class="section gift">
+
+        <div class="gift-container">
+
+            <h1>🎁 I Have One More Surprise...</h1>
+
+            <p>
+                Click the gift box ❤️
+            </p>
+
+            <div class="gift-box" onclick="openGift()" style="transform: scale(0) rotate(360deg); display: none;">
+
+                🎁
+
+            </div>
+
+            <div id="giftMessage" class="gift-message" style="display: block;">
+
+                <h2>
+                    🎉 Surprise! 🎉
+                </h2>
+
+                <p>
+                    You deserve all the happiness in the world.
+                    Keep smiling, keep shining and always remember
+                    that I will always be there for you. ❤️
+                </p>
+
+                <h1>
+                    HAPPY BIRTHDAY! 🎂
+                </h1>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+    <audio id="birthdayMusic" loop="">
+
+        <source src="music/birthday.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./Happy Birthday Sister ❤️_files/script.js.download"></script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

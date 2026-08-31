@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Sister ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         WELCOME SECTION
+    ========================== -->
+
+    <section id="welcome" class="section welcome">
+
+        <div class="welcome-content">
+
+            <div class="heart">❤️</div>
+
+            <h1>Hii Didi!</h1>
+
+            <p>
+                I made something special just for you...
+            </p>
+
+            <button onclick="startWebsite()">
+                ✨ Open Your Surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY SECTION
+    ========================== -->
+
+    <section id="birthday" class="section birthday hidden">
+
+        <div class="birthday-content">
+
+            <p class="small-title">
+                Today is a very special day...
+            </p>
+
+            <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+
+            <h2>My Cute Didi ❤️</h2>
+
+            <div class="photo-container">
+
+                <img src="images/sister.jpg"
+                     alt="Didi">
+
+            </div>
+
+            <p class="birthday-text">
+                Wishing you endless happiness, beautiful moments
+                and everything you deserve. ❤️
+            </p>
+
+            <button onclick="showMemories()">
+                📸 See Our Memories
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES SECTION
+    ========================== -->
+
+    <section id="memories" class="section memories hidden">
+
+        <div class="container">
+
+            <h1>📸 Our Beautiful Memories</h1>
+
+            <p class="section-subtitle">
+                Some moments that I will always remember ❤️
+            </p>
+
+
+            <div class="memory-grid">
+
+
+                <!-- MEMORY 1 -->
+
+                <div class="memory-card"
+                     onclick="openMemory(
+                     'Childhood Memories ❤️',
+                     'Those childhood days were simple, crazy and unforgettable. I am really lucky that I got to grow up with you.',
+                     'images/memory1.jpg'
+                     )">
+
+                    <img src="images/memory1.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Childhood Memories</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 2 -->
+
+                <div class="memory-card"
+                     onclick="openMemory(
+                     'Our Fun Day 😄',
+                     'This was one of those days when we laughed so much that we forgot everything else.',
+                     'images/memory2.jpg'
+                     )">
+
+                    <img src="images/memory2.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Our Fun Day</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 3 -->
+
+                <div class="memory-card"
+                     onclick="openMemory(
+                     'Beautiful Moment 🌸',
+                     'Some moments become special simply because we spent them together.',
+                     'images/memory3.jpg'
+                     )">
+
+                    <img src="images/memory3.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Beautiful Moment</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 4 -->
+
+                <div class="memory-card"
+                     onclick="openMemory(
+                     'Family Time 👨‍👩‍👧',
+                     'Family moments are some of the most precious memories we can have.',
+                     'images/memory4.jpg'
+                     )">
+
+                    <img src="images/memory4.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>Family Time</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 5 -->
+
+                <div class="memory-card"
+                     onclick="openMemory(
+                     'A Special Memory 💕',
+                     'No matter how much time passes, memories like this will always make me smile.',
+                     'images/memory5.jpg'
+                     )">
+
+                    <img src="images/memory5.jpg">
+
+                    <div class="memory-info">
+
+                        <h3>A Special Memory</h3>
+
+                        <p>
+                            Click to remember...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button onclick="showLetter()">
+                💌 Read My Letter
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORY POPUP
+    ========================== -->
+
+    <div id="memoryModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close"
+                  onclick="closeMemory()">
+                &times;
+            </span>
+
+            <img id="modalImage">
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalText"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LETTER SECTION
+    ========================== -->
+
+    <section id="letter" class="section letter hidden">
+
+        <div class="letter-container">
+
+            <h1>💌 A Letter For You</h1>
+
+            <div class="letter-paper">
+
+                <p id="typingText"></p>
+
+            </div>
+
+            <button onclick="showGift()">
+                🎁 One Last Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GIFT SECTION
+    ========================== -->
+
+    <section id="gift" class="section gift hidden">
+
+        <div class="gift-container">
+
+            <h1>🎁 I Have One More Surprise...</h1>
+
+            <p>
+                Click the gift box ❤️
+            </p>
+
+            <div class="gift-box"
+                 onclick="openGift()">
+
+                🎁
+
+            </div>
+
+            <div id="giftMessage" class="gift-message">
+
+                <h2>
+                    🎉 Surprise! 🎉
+                </h2>
+
+                <p>
+                    You deserve all the happiness in the world.
+                    Keep smiling, keep shining and always remember
+                    that I will always be there for you. ❤️
+                </p>
+
+                <h1>
+                    HAPPY BIRTHDAY! 🎂
+                </h1>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+    <audio id="birthdayMusic"
+           loop>
+
+        <source src="music/birthday.mp3"
+                type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
