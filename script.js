@@ -30,6 +30,7 @@ function startWebsite() {
         });
 
     createHearts();
+    updateMusicButton();
 }
 
 
@@ -81,6 +82,7 @@ function openMemory(title, text, image) {
     modalImage.src = image;
 
     modal.style.display = "flex";
+    modal.querySelector(".close").focus();
 }
 
 
@@ -165,6 +167,8 @@ Your Brother ❤️`;
         document.getElementById("typingText");
 
     element.textContent = "";
+    const giftButton = document.getElementById("giftButton");
+    giftButton.disabled = true;
 
     let index = 0;
 
@@ -178,6 +182,8 @@ Your Brother ❤️`;
             index++;
 
             setTimeout(type, 35);
+        } else {
+            giftButton.disabled = false;
         }
     }
 
@@ -220,6 +226,7 @@ function openGift() {
         document.getElementById("giftMessage");
 
 
+    gift.style.animation = "none";
     gift.style.transform =
         "scale(0) rotate(360deg)";
 
@@ -367,3 +374,28 @@ function createConfetti() {
         };
     }
 }
+
+/* ACCESSIBILITY AND MUSIC CONTROLS */
+function updateMusicButton() {
+    const music = document.getElementById("birthdayMusic");
+    document.getElementById("musicToggle").textContent = music.paused ? "🔊 Play Music" : "🔇 Pause Music";
+}
+
+function toggleMusic() {
+    const music = document.getElementById("birthdayMusic");
+    if (music.paused) {
+        music.play().then(updateMusicButton).catch(error => console.warn("Music playback unavailable:", error));
+    } else {
+        music.pause();
+        updateMusicButton();
+    }
+}
+
+document.addEventListener("keydown", event => {
+    const modal = document.getElementById("memoryModal");
+    if (event.key === "Escape" && modal.style.display === "flex") closeMemory();
+    if ((event.key === "Enter" || event.key === " ") && event.target.matches(".memory-card, .gift-box")) {
+        event.preventDefault();
+        event.target.click();
+    }
+});
