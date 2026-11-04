@@ -94,7 +94,7 @@
 
                 <!-- MEMORY 1 -->
 
-                <div class="memory-card"
+                <div class="memory-card" tabindex="0" role="button"
                      onclick="openMemory(
                      'Childhood Memories ❤️',
                      'Those childhood days were simple, crazy and unforgettable. I am really lucky that I got to grow up with you.',
@@ -118,7 +118,7 @@
 
                 <!-- MEMORY 2 -->
 
-                <div class="memory-card"
+                <div class="memory-card" tabindex="0" role="button"
                      onclick="openMemory(
                      'Our Fun Day 😄',
                      'This was one of those days when we laughed so much that we forgot everything else.',
@@ -142,7 +142,7 @@
 
                 <!-- MEMORY 3 -->
 
-                <div class="memory-card"
+                <div class="memory-card" tabindex="0" role="button"
                      onclick="openMemory(
                      'Beautiful Moment 🌸',
                      'Some moments become special simply because we spent them together.',
@@ -166,7 +166,7 @@
 
                 <!-- MEMORY 4 -->
 
-                <div class="memory-card"
+                <div class="memory-card" tabindex="0" role="button"
                      onclick="openMemory(
                      'Family Time 👨‍👩‍👧',
                      'Family moments are some of the most precious memories we can have.',
@@ -190,7 +190,7 @@
 
                 <!-- MEMORY 5 -->
 
-                <div class="memory-card"
+                <div class="memory-card" tabindex="0" role="button"
                      onclick="openMemory(
                      'A Special Memory 💕',
                      'No matter how much time passes, memories like this will always make me smile.',
@@ -227,14 +227,14 @@
          MEMORY POPUP
     ========================== -->
 
-    <div id="memoryModal" class="modal">
+    <div id="memoryModal" class="modal" role="dialog" aria-modal="true" aria-label="Memory details">
 
         <div class="modal-content">
 
-            <span class="close"
-                  onclick="closeMemory()">
+            <button type="button" class="close"
+                  aria-label="Close memory" onclick="closeMemory()">
                 &times;
-            </span>
+            </button>
 
             <img id="modalImage">
 
@@ -263,7 +263,7 @@
 
             </div>
 
-            <button onclick="showGift()">
+            <button id="giftButton" onclick="showGift()" disabled>
                 🎁 One Last Surprise
             </button>
 
@@ -286,7 +286,7 @@
                 Click the gift box ❤️
             </p>
 
-            <div class="gift-box"
+            <div class="gift-box" role="button" tabindex="0" aria-label="Open birthday gift"
                  onclick="openGift()">
 
                 🎁
@@ -328,6 +328,8 @@
 
     </audio>
 
+
+    <button id="musicToggle" class="music-toggle" type="button" onclick="toggleMusic()" aria-label="Play or pause birthday music">🔊 Play Music</button>
 
     <!-- JAVASCRIPT -->
 
